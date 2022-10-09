@@ -1,16 +1,17 @@
-import { React } from "react";
+import { React, useCallback } from "react";
 import { StyleSheet, Text, TouchableOpacity } from "react-native";
 
 const Buttonn = (props) => {
   return (
-    <TouchableOpacity style={styles.buttonBody}>
-      <Text style={styles.buttonText}>{props.children}</Text>
+    <TouchableOpacity style={styles.buttonBody} onPress ={props.callback}>
+      <Text style={styles.buttonText}>{props.children} </Text>
     </TouchableOpacity>
   );
 };
 const styles = StyleSheet.create({
   buttonBody: {
     width: "70%",
+   
     backgroundColor: "#00b6ed",
     alignItems: "center",
     justifyContent: "center",
@@ -18,6 +19,7 @@ const styles = StyleSheet.create({
     height: 40,
   },
   buttonText: {
+
     color: "white",
     fontSize: 14,
   },
